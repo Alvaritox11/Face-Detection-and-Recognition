@@ -15,3 +15,6 @@ Tener en cuenta que el pipeline del proyecto esta hecho para que funcione correc
 ## Carpeta Scripts
 - `loadData.py`: hace 100 fotos y las guarda en la carpeta 'data/images'. Separara las imagenes en las carpetas 'train/images', 'test/images' y 'val/images'. Abrir cada una de estas carpetas en Labelme para realizar el etiquetado y guardar los archivos .json en la carpeta 'label' de 'train', 'test' y 'val'.
 - `augmentData.py`: se encarga de aumentar las imagenes aplicando diferentes configuraciones.
+- `trainingDetection.py`: preparacion del dataset y creacion de la CNN VGG16 a las cuales se les añade el input layer y un Global Max Pooling y dos Dense tanto para la clasificacion de cara o no y para el BBox. Se crea una clase FaceTracker para almacenar los datos diferentes datos usados para el entrenamiento como el LR o el Optimizador tambien calculados en el script. Una vez entrenado el modelo se guarda como 'factracker.keras'.
+- `utils.py`: funciones usadas en `trainingDetection.py` para preparar el dataset y para construir el modelo. 
+- `testRealTime.py`: el modelo guardado se carga en este script permitiendo su uso para probarlo en tiempo real.
